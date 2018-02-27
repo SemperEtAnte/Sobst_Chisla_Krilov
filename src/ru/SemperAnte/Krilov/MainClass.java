@@ -3,6 +3,7 @@ package ru.SemperAnte.Krilov;
 import gauss.LinearSystem;
 import gauss.MainGausSolution;
 import gauss.MyEquation;
+import ru.SemperAnte.Krilov.Utils.FindSolution;
 import ru.SemperAnte.Krilov.Utils.Matrix;
 
 import java.io.File;
@@ -15,9 +16,9 @@ import java.util.Scanner;
 public class MainClass
 {
     private static Matrix matrix;
-    private static List<List<Double>> vectors = new ArrayList<>();
+    public static List<List<Double>> vectors = new ArrayList<>();
     private static LinearSystem<Double, MyEquation> sysOfVectors;
-    private static int size;
+    public static int size;
     private static MainGausSolution mgs = new MainGausSolution();
 
     public static void main(String[] args)
@@ -35,6 +36,7 @@ public class MainClass
         mgs.printSystem(sysOfVectors);
         Double[] coof = mgs.findSolution(sysOfVectors, false);
         mgs.printVector(coof);
+        FindSolution FS = new FindSolution(coof);
     }
 
     private static void createVectors()
@@ -117,9 +119,7 @@ public class MainClass
         for (List<Double> l : vectors)
         {
             for (double d : l)
-            {
                 System.out.print(d + "\t");
-            }
             System.out.println("");
         }
     }
