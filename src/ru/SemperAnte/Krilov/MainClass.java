@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class MainClass
 {
-    private static Matrix matrix;
+    public static Matrix matrix;
     public static List<List<Double>> vectors = new ArrayList<>();
     private static LinearSystem<Double, MyEquation> sysOfVectors;
     public static int size;

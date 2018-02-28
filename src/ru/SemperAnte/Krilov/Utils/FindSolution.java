@@ -78,6 +78,11 @@ public class FindSolution
             System.out.println("");
         }
 
+        System.out.println("=================check=================");
+        for (int i = 0; i < MainClass.size; ++i)
+        {
+            System.out.println(MainClass.matrix.mul(x.get(i)) + " = " + mul(ƛ[i], x.get(i)));
+        }
     }
 
     private List<Double> mul(double f, List<Double> list)
